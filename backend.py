@@ -3,11 +3,11 @@ from pydantic import BaseModel
 import os
 import openai
 
-openai.api_key = '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'
+with open('key.txt', 'r') as f:
+    openai.api_key = f.read()
 
 with open('system_instruction.txt', 'r') as f:
     system_instruction = f.read()
-
 
 class TableGenerator:
     def __init__(self, system_instruction, engine = 'gpt-3.5-turbo'):
