@@ -2,3 +2,4 @@
 .*.swp
 *.pyc
 *.txt
+__pycache__/
