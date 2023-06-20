@@ -2,12 +2,15 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import os
 import openai
+import pdb
 
 with open('key.txt', 'r') as f:
-    openai.api_key = f.read()
+    openai.api_key = f.read().strip()
 
 with open('system_instruction.txt', 'r') as f:
     system_instruction = f.read()
+
+pdb.set_trace()
 
 class TableGenerator:
     def __init__(self, system_instruction, engine = 'gpt-3.5-turbo'):
