@@ -4,7 +4,7 @@ import requests
 st.title('🦜️🔗Vocabulary Table Generator')
 vocab_table_generator_url = "http://localhost:8000/create_vocab_table"
 
-text = st.text_input("text")
+text = st.text_input("text", )
 
 if st.button("Generate Table"):
         
