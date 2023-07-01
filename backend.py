@@ -3,14 +3,14 @@ from pydantic import BaseModel
 import os
 import openai
 
-with open('key.txt', 'r') as f:
+with open('openai.api_key', 'r') as f:
     openai.api_key = f.read().strip()
 
-with open('system_instruction.txt', 'r') as f:
+with open('system_instruction.prompt', 'r') as f:
     system_instruction = f.read()
 
 class TableGenerator:
-    def __init__(self, system_instruction, engine = 'gpt-3.5-turbo'):
+    def __init__(self, system_instruction, engine = 'gpt-3.5-turbo-0613'):
         self.system_instruction = system_instruction
         self.engine = engine
 
