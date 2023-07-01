@@ -23,5 +23,5 @@ if st.button("Generate Table"):
     output_table = response.json()["output_table"]
     #st.success(output_table)
 
-    # Display HTML if input is not empty
+    # Display HTML
     st.markdown(output_table, unsafe_allow_html=True)
