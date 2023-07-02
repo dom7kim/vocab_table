@@ -13,7 +13,9 @@ unsafe_allow_html=True)
 
 st.write('<p style="font-size:22px;"> Please input text below, up to a maximum of 1000 characters.</p>',
 unsafe_allow_html=True)
-text = st.text_area(" ", height=200, max_chars=1000)
+
+# Set key for text_area widget
+text = st.text_area(" ", key='text_area', height=200, max_chars=1000)
 
 if st.button("Generate Table"):
         
@@ -25,3 +27,10 @@ if st.button("Generate Table"):
 
     # Display HTML
     st.markdown(output_table, unsafe_allow_html=True)
+
+# Define callback function to clear text
+def clear_text():
+    st.session_state["text_area"] = ""
+
+# Set button with callback function
+st.button("Clear Text", on_click=clear_text)
