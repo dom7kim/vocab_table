@@ -3,4 +3,5 @@
 *.pyc
 *.api_key
 *.prompt
+*.txt
 __pycache__/
