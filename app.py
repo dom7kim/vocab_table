@@ -1,6 +1,9 @@
 import streamlit as st
 import requests
+import warnings
 
+# Filter out the specific warning
+warnings.filterwarnings('ignore', 'The widget with key', category=UserWarning)
 
 # Set the layout of the app to wide
 st.set_page_config(layout="wide")
@@ -14,18 +17,17 @@ unsafe_allow_html=True)
 st.write('<p style="font-size:22px;"> Please input text below, up to a maximum of 1000 characters.</p>',
 unsafe_allow_html=True)
 
-# Set default text if not set
-if "text_area" not in st.session_state:
-    with open('Example.txt', 'r') as f:
-        st.session_state["text_area"] = f.read()
+# Set default text
+with open('Example.txt', 'r') as f:
+    example_text = f.read()
 
 # Set key for text_area widget
-text = st.text_area("", value=st.session_state["text_area"], key='text_area', height=200, max_chars=1000)
+text_area = st.text_area("", value=example_text, key='text_area', height=200, max_chars=1000)
 
 if st.button("Generate Table"):
         
     response = requests.post(vocab_table_generator_url,
-                json={"original_text": text})
+                json={"original_text": text_area})
     #print(response.json()["table"])    
     output_table = response.json()["output_table"]
     #st.success(output_table)
