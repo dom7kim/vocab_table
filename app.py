@@ -28,15 +28,19 @@ text_area = st.text_area("", value=example_text, key='text_area', height=200, ma
 col1, col2, _, _, _, _, _ = st.columns(7)
 
 if col1.button("Build Vocabulary!"):
-        
-    response = requests.post(vocab_table_generator_url,
-                json={"original_text": text_area})
-    #print(response.json()["table"])    
-    output_table = response.json()["output_table"]
-    #st.success(output_table)
+    
+    # Check if text area is empty
+    if text_area.strip() == "":
+        st.error("Your text area is empty. Please enter some text to build your vocabulary!")
+    else:    
+        response = requests.post(vocab_table_generator_url,
+                    json={"original_text": text_area})
+        #print(response.json()["table"])    
+        output_table = response.json()["output_table"]
+        #st.success(output_table)
 
-    # Display HTML
-    st.markdown(output_table, unsafe_allow_html=True)
+        # Display HTML
+        st.markdown(output_table, unsafe_allow_html=True)
 
 # Define callback function to clear text
 def clear_text():
