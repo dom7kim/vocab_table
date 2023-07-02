@@ -6,7 +6,7 @@ import openai
 with open('openai.api_key', 'r') as f:
     openai.api_key = f.read().strip()
 
-with open('system_instruction.prompt', 'r') as f:
+with open('system_instruction2.prompt', 'r') as f:
     system_instruction = f.read()
 
 class TableGenerator:
