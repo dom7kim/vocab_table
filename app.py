@@ -14,8 +14,13 @@ unsafe_allow_html=True)
 st.write('<p style="font-size:22px;"> Please input text below, up to a maximum of 1000 characters.</p>',
 unsafe_allow_html=True)
 
+# Set default text if not set
+if "text_area" not in st.session_state:
+    with open('Example.txt', 'r') as f:
+        st.session_state["text_area"] = f.read()
+
 # Set key for text_area widget
-text = st.text_area(" ", key='text_area', height=200, max_chars=1000)
+text = st.text_area("", value=st.session_state["text_area"], key='text_area', height=200, max_chars=1000)
 
 if st.button("Generate Table"):
         
