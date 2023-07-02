@@ -25,9 +25,9 @@ with open('Example.txt', 'r') as f:
 text_area = st.text_area("", value=example_text, key='text_area', height=200, max_chars=1000)
 
 # Create two columns
-col1, col2 = st.columns(2)
+col1, col2, _, _, _, _, _ = st.columns(7)
 
-if col1.button("Generate Table"):
+if col1.button("Build Vocabulary!"):
         
     response = requests.post(vocab_table_generator_url,
                 json={"original_text": text_area})
