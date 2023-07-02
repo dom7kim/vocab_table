@@ -8,10 +8,10 @@ warnings.filterwarnings('ignore', 'The widget with key', category=UserWarning)
 # Set the layout of the app to wide
 st.set_page_config(layout="wide")
 
-st.title('🦜️🔗Vocabulary Table Generator')
+st.title('🦜️🔗 VocabBuilder Pro')
 vocab_table_generator_url = "http://localhost:8000/create_vocab_table"
 
-st.write('<p style="font-size:22px;">Let\'s make learning fun! This app crafts a unique vocabulary table just for you. It\'s filled with key expressions, their meanings in Korean and English, and contextually similar example sentences inspired by your original text. Enjoy your personalized language learning journey!</p>',
+st.write('<p style="font-size:22px;"> This app crafts a unique vocabulary table just for you. It\'s filled with key expressions, their meanings in Korean and English, and example sentences inspired by your original text. Enjoy your personalized language learning journey!</p>',
 unsafe_allow_html=True)
 
 st.write('<p style="font-size:22px;"> Please input text below, up to a maximum of 1000 characters.</p>',
@@ -24,7 +24,10 @@ with open('Example.txt', 'r') as f:
 # Set key for text_area widget
 text_area = st.text_area("", value=example_text, key='text_area', height=200, max_chars=1000)
 
-if st.button("Generate Table"):
+# Create two columns
+col1, col2 = st.columns(2)
+
+if col1.button("Generate Table"):
         
     response = requests.post(vocab_table_generator_url,
                 json={"original_text": text_area})
@@ -40,4 +43,4 @@ def clear_text():
     st.session_state["text_area"] = ""
 
 # Set button with callback function
-st.button("Clear Text", on_click=clear_text)
+col2.button("Clear Text", on_click=clear_text)
