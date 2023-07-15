@@ -3,10 +3,9 @@ from pydantic import BaseModel
 import os
 import openai
 
-with open('openai.api_key', 'r') as f:
-    openai.api_key = f.read().strip()
+openai.api_key = os.environ['OPENAI_API_KEY']
 
-with open('system_instruction2.prompt', 'r') as f:
+with open('system_instruction.prompt', 'r') as f:
     system_instruction = f.read()
 
 class TableGenerator:

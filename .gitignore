@@ -1,7 +1,6 @@
 .DS_Store
 .*.swp
 *.pyc
-*.api_key
 *.prompt
 *.txt
 __pycache__/
