@@ -12,3 +12,7 @@ This app is designed to create a customized vocabulary table for you, offering a
 - **Bilingual Meanings**: The app provides meanings of these key expressions in both Korean and English, bridging the gap between the two languages.
 
 - **Example Sentences**: The app generates example sentences to give you a practical understanding of how these expressions are used. These aren't always direct quotes from your text, but are contextually similar to give you a real feel for the language.
+
+## License
+
+Snap 'n' Solve is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
