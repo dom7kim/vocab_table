@@ -15,4 +15,4 @@ This app is designed to create a customized vocabulary table for you, offering a
 
 ## License
 
-Snap 'n' Solve is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+This app is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
