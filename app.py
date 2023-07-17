@@ -48,3 +48,9 @@ def clear_text():
 
 # Set button with callback function
 col2.button("Clear Text", on_click=clear_text)
+
+# Display copyright notice
+st.markdown("""
+***
+© 2023 Dongwon Kim
+""")
