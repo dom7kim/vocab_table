@@ -17,6 +17,7 @@ class TableGenerator:
         messages = [{"role": "system", "content": self.system_instruction},
                 {"role": "user", "content": text}]
         response = openai.ChatCompletion.create(model = self.engine,
+                                                temperature = 0,
                                                 messages=messages) 
         result = response['choices'][0]['message']['content']
         return result
