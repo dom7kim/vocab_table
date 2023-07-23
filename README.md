@@ -1,4 +1,4 @@
-# Vocabulary Builder App: Customized Language Learning
+# VocabBuilder Pro: Customized Language Learning
 
 
 ## About The App
