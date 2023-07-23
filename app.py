@@ -11,10 +11,10 @@ st.set_page_config(layout="wide")
 st.title('🦜️🔗 VocabBuilder Pro')
 vocab_table_generator_url = "http://localhost:8000/create_vocab_table"
 
-st.write('<p style="font-size:22px;"> This app crafts a unique vocabulary table just for you. It\'s filled with key expressions, their meanings in Korean and English, and example sentences inspired by your original text. Enjoy your personalized language learning journey!</p>',
+st.write('<p style="font-size:16px;"> This app crafts a unique vocabulary table just for you. It\'s filled with key expressions, their meanings in Korean and English, and example sentences inspired by your original text. Enjoy your personalized language learning journey!</p>',
 unsafe_allow_html=True)
 
-st.write('<p style="font-size:22px;"> Please input text below, up to a maximum of 1000 characters.</p>',
+st.write('<p style="font-size:16px;"> Please input text below, up to a maximum of 1000 characters.</p>',
 unsafe_allow_html=True)
 
 # Set default text
