@@ -34,10 +34,8 @@ if col1.button("Build Vocabulary!"):
         st.error("Your text area is empty. Please enter some text to build your vocabulary!")
     else:    
         response = requests.post(vocab_table_generator_url,
-                    json={"original_text": text_area})
-        #print(response.json()["table"])    
+                    json={"original_text": text_area})   
         output_table = response.json()["output_table"]
-        #st.success(output_table)
 
         # Display HTML
         st.markdown(output_table, unsafe_allow_html=True)
