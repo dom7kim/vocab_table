@@ -5,7 +5,7 @@
 
 This app is designed to create a customized vocabulary table for you, offering an enriching and engaging language learning experience. With Vocabulary Builder, you're not just memorizing words - you're learning them in context and understanding their usage in real-world scenarios.
 
-![Screenshot](Screenshot.png)
+![Screenshot](../assets/Screenshot.png)
 
 ### Features
 

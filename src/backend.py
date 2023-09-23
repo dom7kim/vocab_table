@@ -5,7 +5,7 @@ import openai
 
 openai.api_key = os.environ['OPENAI_API_KEY']
 
-with open('system_instruction.prompt', 'r') as f:
+with open('../prompts/system_instruction.prompt', 'r') as f:
     system_instruction = f.read()
 
 class TableGenerator:

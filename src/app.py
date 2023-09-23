@@ -18,7 +18,7 @@ st.write('<p style="font-size:16px;"> Please input text below, up to a maximum o
 unsafe_allow_html=True)
 
 # Set default text
-with open('Example.txt', 'r') as f:
+with open('../assets/Example.txt', 'r') as f:
     example_text = f.read()
 
 # Set key for text_area widget
